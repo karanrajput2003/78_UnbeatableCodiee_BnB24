@@ -6,7 +6,252 @@
     <title>E- Ayushman Bharat Patient Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet"> 
+  
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+      </style>
     <style>
+    
+    
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:ital@1&family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(to right, #ffb58a, #6cb4fc); */
+    padding:0px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.progress-container {
+    margin-bottom: 20px;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #007bff;
+}
+
+.top {
+    background-color: #f2f2f2;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.logo {
+    display: inline-block;
+    margin-right: auto; /* Pushes the logo to the left */
+}
+
+.navbar {
+    background-color: #28c244;
+    overflow: hidden;
+}
+
+.navbar-brand {
+    float: left;
+    padding: 5px 10px;
+}
+
+.navbar-brand img {
+    height: 60px;
+    vertical-align: left;
+}
+
+.nav-link {
+    float:right;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #4a5151;
+}
+
+.consult-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    float: right;
+}
+
+.consult-button:hover {
+    background-color: #0056b3;
+}
+
+/*.language-selector {
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+#language-select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#language-select:hover {
+    background-color: #f4f4f4;
+}
+
+
+#language-select::after {
+    content: '\25BC'; 
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 10px;
+    font-size: 12px;
+}
+
+
+#language-select option {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+* Style for the medication tabs container */
+.medication-tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style for each medication tab */
+.medication-tab {
+    flex: 1;
+    margin-right: 10px; /* Adjust as needed */
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+/* Style for the file input */
+#document {
+    border: 2px solid #ccc; /* Add a border */
+    padding: 10px; /* Add some padding */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    background-color: #f9f9f9; /* Add background color */
+    font-size: 16px; /* Adjust font size */
+    transition: border-color 0.3s; /* Add transition effect for border color */
+  }
+  
+  /* Style for when the file input is hovered */
+  #document:hover {
+    border-color: #007bff; /* Change border color on hover */
+  }
+  
+  /* Style for when the file input is focused */
+  #document:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #007bff; /* Change border color when focused */
+  }
+
+  .row {
+    display: flex;
+    gap: 10px;
+}
+
+.col {
+    flex: 1;
+}
+
+
         body {
     padding: 0px;
     background: linear-gradient(to right, #ffb58a, #6cb4fc); /* Gradient background */
@@ -175,6 +420,13 @@ body {
   white-space: nowrap;
 }
 
+input[type="text"],
+  input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
 /* --------- curve outside ---------- */
 .navigation ul li:hover a::before,
 .navigation ul li.hovered a::before {
@@ -325,6 +577,15 @@ body {
             </li>
 
             <li>
+                <a href="./consultStatus">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="title">Status</span>
+                </a>
+            </li>
+
+            <li>
                 <a href="./pastconsult">
                     <span class="icon">
                         <ion-icon name="people-outline"></ion-icon>
@@ -374,28 +635,125 @@ body {
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <header class="mb-4">
             <h2>E- Ayushman Bharat Patient Dashboard</h2>
         </header>
         
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Past Consultations</h2>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Date</th>
-                            <th>Patient Name</th>
-                            <th>Doctor Name</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="past-consultations"></tbody>
-                </table>
+        
+    </div> -->
+    <div class="container">
+        <h1>Medical History Collection</h1>
+        
+        <!-- <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div> -->
+        
+        <!-- <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" class="form-control input-field"  value=<%= foundUser.username %> readonly>
+          </div> -->
+
+        <form id="medical-history-form" action="/api/auth/consult" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="username">Username</label>
+                    <input type="text" id="username"  type="hidden" name="username" class="form-control input-field"  value=<%= foundUser.username %> readonly>
+                </div>
+                  <div class="form-group col-md-6">
+                      <label for="id">Id</label>
+                      <input type="text" id="id"  type="hidden" name="id" class="form-control input-field" value=<%= foundUser.id %> readonly>
+                  </div>
             </div>
-        </div>
+            <div class="form-group col-md-12">
+                <label for="first_time">Is this your first time of consultation?</label>
+                <select id="first_time" name="first_time" class="form-control input-field">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label for="disease_type">What type of disease do you have?</label>
+                <input type="text" id="disease_type" name="disease_type" class="form-control input-field" placeholder="Enter your disease type">
+            </div>
+
+            <div class="form-group col-md-12" id="allergy-field">
+                <label for="allergy_type">What type of allergy do you have?</label>
+                <input type="text" id="allergy_type" name="allergy_type" class="form-control input-field" placeholder="Enter your allergy type">
+                
+                <div class="row">
+                    <div class="col">
+                        <label for="allergy_severity">Severity:</label>
+                        <select id="allergy_severity" name="allergy_severity">
+                            <option value="mild">Mild</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="severe">Severe</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="allergy_exists">Does it still exist?</label>
+                        <select id="allergy_exists" name="allergy_exists">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- <div class="form-group col-md-12" id="family-history-field">
+                <label for="family-history">Family History</label>
+                <input type="text" id="family-history" name="family-history" class="form-control input-field" placeholder="Enter your family history">
+            </div> -->
+            <div class="form-group col-md-12" id="current-medication-field">
+                <label for="current-medication">Current Medication</label>
+                <div class="medication-tabs">
+                    
+                    <div class="medication-tab">
+                        <label for="medication_type">Type of Medication</label>
+                        <select id="medication_type" name="medication_type">
+                            <option value="medication1">Medication 1</option>
+                            <option value="medication2">Medication 2</option>
+                            <option value="medication3">Medication 3</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    
+                    <div class="medication-tab">
+                        <label for="medication_duration">Duration</label>
+                        <select id="medication_duration" name="medication_duration" class="form-control input-field">
+                            <option value="duration1">Lifetime</option>
+                            <option value="duration2">3 months</option>
+                            <option value="duration3">A year</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    
+                    <div class="medication-tab">
+                        <label for="medication_dosage">Dosage</label>
+                        <select id="medication_dosage" name="medication_dosage" class="form-control input-field">
+                            <option value="dosage1">Dosage 1</option>
+                            <option value="dosage2">Dosage 2</option>
+                            <option value="dosage3">Dosage 3</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="query">Query</label>
+                <input type="text" id="query" name="query" class="form-control input-field" placeholder="Enter your query">
+            </div>
+            
+            <!-- <div class="form-group col-md-12">
+                <label for="document">Upload your history</label>
+                <input type="file" id="document" name="document" class="form-control input-field" accept=".pdf, .json">
+            </div> -->
+
+            <button type="submit" class="login-button">Submit</button>
+        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
