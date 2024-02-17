@@ -4,50 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Ayushman</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <div class="top">
         <div class="logo">
-            <a href="#" class="navbar-brand">
-                <img src="logo-101.png" alt="logo">
+            <a href="/" class="navbar-brand">
+                <img src="images/logo.png" alt="E Ayushman Bharat Logo">
             </a>
         </div>
         <div class="buttons">
             <a href="#" class="consult-button">Consult a Doctor</a>
-            <a href="#" class="login-button">Login</a>
-            <a href="#" class="register-button">Register</a>
+            <a href="/login" class="login-button">Login</a>
+            <a href="/register" class="register-button">Register</a>
         </div>
     </div>
     
     <nav class="navbar">
-        <a href="#" class="nav-link">Contact Us</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
         <a href="#" class="nav-link">FAQs</a>
         <a href="#" class="nav-link">About Us</a>
         <a href="#" class="nav-link">Home</a>
     </nav>
     <div class="container">
         <div class="header-text">
-            <h1>E<span>Ayushman</span>Bharat</h1>
+            <h1>E - <span>Ayushman</span> Bharat</h1>
             <p id="paragraph" style="display: none;">Nurturing Health and Well-being.</p>
     <button class="more-info-button" onclick="showParagraph()">More Info</button>
         </div>
         <div class="img-container">
             <div class="img-1">
                 <a href="index.html">
-                    <img src="slider_img5.svg">
+                    <img src="images/slider_img5.svg">
                     <div class="tooltip">E-Ayushman</div>
                 </a>
             </div>
             <div class="img-2">
                 <a href="#">
-                    <img src="slider_img1.svg">
+                    <img src="images/slider_img1.svg">
                     <div class="tooltip">Ayushman Bharat</div>
                 </a>
             </div>
             <div class="img-3">
                 <a href="#">
-                    <img src="1MG2.svg">
+                    <img src="images/1MG2.svg">
                     <div class="tooltip">Nuturing Youth</div>
                 </a>
             </div>
@@ -60,38 +60,69 @@
             <button onclick="showTab(2)">Consulted Telemedicine</button>
         </div>
         <div class="consulting-button">
-            <img id="tab2Img1" src="Save img.jpg" alt="Consulting Button" onclick="swapImage()">
+            <img id="tab2Img1" src="images/Save img.png" alt="Consulting Button" onclick="swapImage()">
         </div>
     </div>
     <div class="map-section">
         <h2>States Affected In India</h2>
-        <img src="india.svg" alt="India Map" class="india-map">
+        <img src="images/india.svg" alt="India Map" class="india-map">
     </div>
 <div class="doctor">
     <div class="doctors-section">
         <h2>Meet Our Doctors</h2>
         <div class="card">
-            <img src="D1.jpg" alt="Doctor 1">
+            <img src="images/D1.jpg" alt="Doctor 1">
             <h3>Dr. John Doe</h3>
             <p>Cardiologist</p>
         </div>
         <div class="card">
-            <img src="D2.jpg" alt="Doctor 2">
+            <img src="images/D2.jpg" alt="Doctor 2">
             <h3>Dr. Jany Smith</h3>
             <p>Neurologist</p>
         </div>
         <div class="card">
-            <img src="d3.jpg" alt="Doctor 3">
+            <img src="images/d3.jpg" alt="Doctor 3">
             <h3>Dr. David Johnson</h3>
             <p>Oncologist</p>
         </div>
         <div class="card">
-            <img src="D4.jpg" alt="Doctor 4">
+            <img src="images/D4.jpg" alt="Doctor 4">
             <h3>Dr. Emil Williams</h3>
             <p>Pediatrician</p>
         </div>
     </div>
 </div>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About E Ayushman Bharat</h3>
+            <p>"E-Ayushman Bharat" in rural areas equipped with reliable internet, diagnostic tools, and trained local staff. Partner with urban medical centers to provide specialist consultations. Implement community outreach programs to build trust. Leverage mobile clinics for on-site care. Empower patients with telehealth literacy. Enable seamless integration with existing healthcare systems.</p>
+        </div>
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact-form">
+            <h3>Contact Us</h3>
+            <form action="#" id="contact">
+                <input type="email" name="email" class="text-input contact-input" placeholder="Your email address">
+                <textarea name="message" class="text-input contact-input" placeholder="Your message"></textarea>
+                <button type="submit" class="btn btn-big contact-btn">
+                    <i class="fas fa-envelope"></i>
+                    Send
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; eayushmanbharat.com | Designed by Unbeatble Codiees
+    </div>
+</footer>
     <script>
        let images = document.querySelectorAll('.img-container > div');
     let index = 0;
@@ -123,7 +154,7 @@ function swapImage() {
     // Get the image element
     var img = document.getElementById('tab2Img1');
     // Change the source of the image
-    img.src = "Save Img2.jpg"; // Replace with the actual image source
+    img.src = "images/Save Img2.jpg"; // Replace with the actual image source
 }
 
 //India map
