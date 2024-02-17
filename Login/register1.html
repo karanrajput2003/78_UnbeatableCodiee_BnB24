@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+
+        form{
+           margin: 50px; 
+          
+        }
+        .input-field
+{
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(168, 168, 168);
+    width: 250px;
+    outline: none;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: red;
+    background: #15233C;
+    width: 800px;
+    height: 550px;
+    margin: 10% auto;;
+    border-radius: 5px;
+}
+
+.content-holder
+{
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-top: 15%;
+    padding: 50px;
+}
+
+.content-holder h2
+{
+    font-size: 34px;
+    margin: 20px auto;
+}
+
+.content-holder p
+{
+    margin: 30px auto;
+}
+
+.content-holder button
+{
+    border:none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: white;
+    width: 150px;
+    margin: 20px auto;
+}
+
+
+.box-2{
+    background-color: white;
+
+    margin: 5px;
+}
+
+.login-form-container
+{
+    text-align: center;
+    /* margin-top: 10%; */
+
+}
+
+.login-form-container h1
+{
+    color: black;
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.input-field
+{
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(168, 168, 168);
+    width: 250px;
+    outline: none;
+}
+
+.login-button{
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    padding: 13px;
+    border-radius: 7px;
+    border: none;
+    width: 250px;
+    outline: none;
+    background-color: rgb(56, 102, 189);
+}
+
+
+
+.button-2
+{
+    display: none;
+}
+
+
+
+
+
+.signup-form-container
+{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    text-align: center;
+    display: none;
+}
+
+
+.signup-form-container h1
+{
+    color: black;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.signup-button{
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    padding: 13px;
+    border-radius: 7px;
+    border: none;
+    width: 250px;
+    outline: none;
+    background-color: rgb(56, 189, 149);  
+}
+
+    </style>
+  </head>
+  <body>
+
+<br>
+
+<div class="container">
+  <!--Data or Content-->
+  <div class="box-1">
+      <div class="content-holder">
+        <h2>Hello, Customer</h2>
+        <p>Welcome to Bajaj Finserv Ltd.</p>
+      </div>
+  </div>
+
+  
+  <!--Forms-->
+  <div class="box-2">
+  <div class="login-form-container">
+      <h1>Registration</h1>
+      <form method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="username">Username</label>
+            <input type="text" class="form-control input-field" placeholder="username">
+        </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="text" class="form-control input-field" placeholder="username">
+          </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control input-field" placeholder="username">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="last_name">Last Name</label>
+              <input type="text" class="form-control input-field" placeholder="username">
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="mobile">Mobile</label>
+              <input type="text" class="form-control input-field" placeholder="username">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="address">Address</label>
+              <input type="text" class="form-control input-field" placeholder="username">
+        
+            </div>
+          </div>    
+    
+        <button type="submit" class="login-button">Sign Up</button>
+      </form>
+
+  </div>
+
+
+
+  </div>
+  </body>
+</html>
+
+

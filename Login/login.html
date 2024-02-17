@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E Ayushman - Patient Login</title>
+  <!-- <link rel="stylesheet" href="css/login.css"> -->
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet"> 
+  
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        </style>
+  <style>
+    
+
+
+*{
+    margin: 0px;
+    padding: 0px;;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: red;
+    background: #15233C;
+    width: 800px;
+    height: 400px;
+    margin: 10% auto;;
+    border-radius: 5px;
+}
+
+.content-holder
+{
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-top: 15%;
+    padding: 50px;
+}
+
+.content-holder h2
+{
+    font-size: 34px;
+    margin: 20px auto;
+}
+
+.content-holder p
+{
+    margin: 30px auto;
+}
+
+.content-holder button
+{
+    border:none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: white;
+    width: 150px;
+    margin: 20px auto;
+}
+
+
+.box-2{
+    background-color: white;
+    margin: 5px;
+}
+
+.login-form-container
+{
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 10%;
+
+
+}
+
+.login-form-container h1
+{
+    color: black;
+    font-size: 24px;
+    /* padding: 20px; */
+}
+
+.input-field
+{
+    box-sizing: border-box;
+    font-size: 14px;
+    /* padding: 10px; */
+    border-radius: 7px;
+    border: 1px solid rgb(168, 168, 168);
+    width: 250px;
+    outline: none;
+}
+
+.login-button{
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    /* padding: 13px; */
+    border-radius: 7px;
+    border: none;
+    width: 250px;
+    outline: none;
+    background-color: rgb(56, 102, 189);
+}
+
+
+
+.button-2
+{
+    display: none;
+}
+
+
+
+
+
+.signup-form-container
+{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    text-align: center;
+    display: none;
+}
+
+
+.signup-form-container h1
+{
+    color: black;
+    font-size: 24px;
+    padding: 20px;
+}
+
+.signup-button{
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    padding: 13px;
+    border-radius: 7px;
+    border: none;
+    width: 250px;
+    outline: none;
+    background-color: rgb(56, 189, 149);  
+}
+  </style>
+</head>
+<body>
+  <body>
+    <!-- <div class="container">
+      <div class="header">
+        <img src="images/logo.png" alt="E Ayushman Bharat Logo">
+        <h1>E Ayushman Bharat </h1>
+        <h2>Patient Login</h2>
+        <p>Please enter your credentials to log in.</p>
+      </div>
+      <div class="login-form">
+        <form action="/api/auth/signin" method="post">
+          <div class="row">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="row">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="row">
+            <button type="submit">Login</button>
+          </div>
+          <div class="row">
+            <p>New User? <a href="#">Register Here</a></p>
+          </div>
+        </form>
+      </div>
+    </div> -->
+    <div class="container">
+        <div class="box-1">
+            <div class="content-holder">
+                <h4>Hello, Welcome to</h4>
+              <img src="images/logo.png" alt="E Ayushman Bharat Logo" width="100%" height="100%">
+            </div>
+        </div>        
+        <div class="box-2">
+            <div class="login-form-container log-form">
+                <!-- <h1>Login</h1> -->
+                <form action="/api/auth/signin" method="post">
+                    <div class="form-row">
+                        <div  class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Username" class="form-control input-field" name="username" required>
+                        </div>
+                        <div  class="form-group">
+                            <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Password" class="form-control input-field" name="password" required>
+                        </div>
+                    <!-- <a href="/register">New User</a> -->
+                   <br>
+                   <br>
+                        
+                    <button type="submit" class="login-button">Login</button>
+
+                      </div>
+
+                 </form>
+            </div>
+        </div>
+  </div>
+  </body>
+</html>
