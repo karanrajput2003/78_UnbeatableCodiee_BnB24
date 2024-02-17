@@ -6,11 +6,13 @@ const express = require("express");
 
 const User = db.user;
 const Role = db.role;
+const Patients = db.patient;
+
 
 var jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { role } = require("../models"); 
-const { application } = require("express");
+const { application, query } = require("express");
 const app = express();
 
 exports.signup = (req, res) => {
@@ -248,6 +250,32 @@ exports.dsignup = (req, res) => {
           res.redirect('/api/auth/adminhome');
         });
       });
+    }
+  });
+};
+
+
+exports.consult = (req, res) => {
+    console.log(req.body.username);
+    const patients = new Patients({
+      username: req.body.username,
+      id: req.body.id,
+      first_time: req.body.first_time,
+      // password: bcrypt.hashSync(req.body.password, 8),
+      disease_type: req.body.disease_type,
+      allergy_type: req.body.allergy_type,
+      allergy_severity: req.body.allergy_severity,
+      allergy_exists: req.body.allergy_exists,
+      medication_type: req.body.medication_type,
+      medication_duration: req.body.medication_duration,
+      medication_dosage: req.body.medication_dosage,
+      query: req.body.query
+    });
+
+  patients.save((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
     }
   });
 };

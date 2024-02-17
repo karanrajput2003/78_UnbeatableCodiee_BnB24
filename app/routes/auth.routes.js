@@ -28,5 +28,10 @@ module.exports = function(app) {
     controller.dsignup
   );
 
+  app.post(
+    "/api/auth/consult",
+    controller.consult
+  );
+
   app.post("/api/auth/signin", controller.signin);
 };
