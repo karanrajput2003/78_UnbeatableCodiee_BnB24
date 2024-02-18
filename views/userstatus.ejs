@@ -394,15 +394,33 @@ body {
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Date</th>
-                            <th>Patient Name</th>
-                            <th>Doctor Name</th>
+                            <th>Username</th>
+                            <!-- <th>Date</th> -->
+                            <th>Disease Type</th>
+                            <th>Query</th>
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody id="past-consultations"></tbody>
+                    <tbody id="past-consultations">
+                        <% if (patients.length > 0) { %>
+                            <% patients.forEach(patient => { %>
+                                <tr>
+                                    <th><%= patient.username %></th>
+                                    <!-- <th>Date</th> -->
+                                    <th><%= patient.disease_type %></th>
+                                    <th><%= patient.query %></th>
+                                    <th><%= patient.approved %></th>
+                                </tr>
+                              <!-- <li><%= patient.username %></li> -->
+                              <!-- Add other patient properties as needed -->
+                            <% }); %>
+                          </ul>
+                        <% } else { %>
+                          <p>No patients found for this user.</p>
+                        <% } %>
+                    </tbody>
                 </table>
+                <!-- <%- console.log(patients.length) %> -->
             </div>
         </div>
     </div>

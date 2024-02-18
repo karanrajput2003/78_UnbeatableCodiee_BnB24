@@ -379,32 +379,41 @@ body {
         <header class="mb-4">
             <h2>E- Ayushman Bharat Doctor Dashboard</h2>
         </header>
-        
         <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Consultations</h5>
-                        <h1 class="card-text" id="total-consultations">0</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Pending Consultations</h5>
-                        <h1 class="card-text" id="pending-consultations">0</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Completed Consultations</h5>
-                        <h1 class="card-text" id="completed-consultations">0</h1>
-                    </div>
-                </div>
-            </div>
+          <div class="col-md-12">
+              <h2>Status</h2>
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Username</th>
+                          <!-- <th>Date</th> -->
+                          <th>Disease Type</th>
+                          <th>Query</th>
+                          <th>Status</th>
+                      </tr>
+                  </thead>
+                  <tbody id="past-consultations">
+                      <% if (patients.length > 0) { %>
+                          <% patients.forEach(patient => { %>
+                              <tr>
+                                  <th><%= patient.username %></th>
+                                  <!-- <th>Date</th> -->
+                                  <th><%= patient.disease_type %></th>
+                                  <th><%= patient.query %></th>
+                                  <th><%= patient.approved %></th>
+                              </tr>
+                            <!-- <li><%= patient.username %></li> -->
+                            <!-- Add other patient properties as needed -->
+                          <% }); %>
+                        </ul>
+                      <% } else { %>
+                        <p>No patients found for this user.</p>
+                      <% } %>
+                  </tbody>
+              </table>
+              <!-- <%- console.log(patients.length) %> -->
+          </div>
+      </div>
         </div>
     </div>
 

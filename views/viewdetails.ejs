@@ -6,10 +6,40 @@
     <title>E- Ayushman Bharat Patient Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet"> 
+  
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+      </style>
     <style>
         body {
     padding: 0px;
-    background: linear-gradient(to right, #ffb58a, #6cb4fc); /* Gradient background */
+    /* background: linear-gradient(to right, #ffb58a, #6cb4fc); Gradient background */
 }
 
 .container {
@@ -163,6 +193,14 @@ body {
 }
 .navigation ul li a .icon ion-icon {
   font-size: 1.75rem;
+}
+.contact-form form input[type="email"],
+.contact-form form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .navigation ul li a .title {
@@ -379,32 +417,55 @@ body {
         <header class="mb-4">
             <h2>E- Ayushman Bharat Doctor Dashboard</h2>
         </header>
-        
         <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Consultations</h5>
-                        <h1 class="card-text" id="total-consultations">0</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Pending Consultations</h5>
-                        <h1 class="card-text" id="pending-consultations">0</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Completed Consultations</h5>
-                        <h1 class="card-text" id="completed-consultations">0</h1>
-                    </div>
-                </div>
-            </div>
+          <div class="col-md-12">
+              <h2>Patient Details</h2>
+              <!-- <table class="table table-striped"> -->
+                  <!-- <thead>
+                      <tr>
+                          <th>Username</th>
+                          <th>Disease Type</th>
+                          <th>Query</th>
+                          <th>Status</th>
+                          <th>Details</th>
+                      </tr>
+                  </thead> -->
+                  <ul id="past-consultations">
+                      <% if (patients.length > 0) { %>
+                          <% patients.forEach(patient => { %>
+                            <li class="form-control input-field"><b> Patient Username: </b><%= patient.username %></li>
+                            <br>
+                            <li class="form-control input-field"><b>Is this your first time of consultation?</b> <%= patient.first_time %></li>
+                            <br>
+                            <li class="form-control input-field"><b>type of disease do you have?</b> <%= patient.disease_type %></li>
+                            <br>
+                            <li class="form-control input-field"><b>What type of allergy do you have?</b> <%= patient.allergy_type %></li>
+                            <br>
+                            <li class="form-control input-field"><b>Severity:</b> <%= patient.allergy_severity %></li>
+                            <br>
+                            <li class="form-control input-field"><b>Does it still exist?</b> <%= patient.allergy_exists %></li>
+                            <br>Current Medication
+                            <li class="form-control input-field"><b>Type of Medication</b> <%= patient.medication_type %></li>
+                            <br>
+                            <li class="form-control input-field"><b>Duration</b> <%= patient.medication_duration %></li>
+                            <br>
+                            <li class="form-control input-field"><b>Dosage</b> <%= patient.medication_dosage %></li>
+                            <br>
+                            <li class="form-control input-field"><b>Query</b> <%= patient.query %></li>
+                            <br><a href="./approve?id=<%= patient._id %>" class="login-button">Approved</a>
+                            <a href="./viewdetails?id=<%= patient._id %>" class="login-button">Cancel</a>
+                            <!-- <li><%= patient.username %></li> -->
+                            <!-- Add other patient properties as needed -->
+                          <% }); %>
+                        </ul>
+                      <% } else { %>
+                        <p>No patients found for this user.</p>
+                      <% } %>
+                  </ul>
+              <!-- </table> -->
+              <!-- <%- console.log(patients.length) %> -->
+          </div>
+      </div>
         </div>
     </div>
 
