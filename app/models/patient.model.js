@@ -13,6 +13,7 @@ const patient = mongoose.model(
     medication_duration:String,
     medication_dosage:String,
     query:String,
+    approved:String,
     id: [
       {
         type: mongoose.Schema.Types.ObjectId,

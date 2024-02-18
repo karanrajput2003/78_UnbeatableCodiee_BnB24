@@ -26,7 +26,7 @@ font-family: Arial, Helvetica, sans-serif;
 {
 display: grid;
 grid-template-columns: 1fr 2fr;
-background-color: red;
+/* background-color: red; */
 background: #15233C;
 width: 800px;
 height: 550px;

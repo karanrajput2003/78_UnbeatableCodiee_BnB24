@@ -3,6 +3,7 @@ const cors = require("cors");
 var bodyParser = require('body-parser')
 const dbConfig = require("./app/config/db.config");
 const session = require('express-session');
+require('dotenv').config();
 
 // var popup = require('popups');
 
@@ -92,7 +93,9 @@ app.get("/api/auth/consultStatus", async (req, res) => {
     if (!user) {
       return res.status(404).send("User not found");
     }
-    const patients = await Patients.find({ id: user._id });
+    const patients = await Patients.find({ id: user._id,
+      approved: "No"
+     });
 
     res.render("userstatus", { patients });
   } catch (error) {
@@ -101,8 +104,15 @@ app.get("/api/auth/consultStatus", async (req, res) => {
   }
 });
 
-app.get("/api/auth/pastconsult", (req, res) => {
-  res.render("userpastconsultation", {foundUser});
+app.get("/api/auth/pastconsult", async (req, res) => {
+  try {
+    const patients = await Patients.find({ approved: "Yes" });
+
+    res.render("userpastconsultation", { patients });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 app.get("/api/auth/doctorhome", (req, res) => {
@@ -167,21 +177,51 @@ app.get("/api/auth/approve", async (req, res) => {
     if(!userId) {
       console.log("error");
     }
-    // const patients = await Patients.find({ _id: userId });
-    const patients = await Patients.findByIdAndUpdate(
-      userId,
-      { approved: "Yes" }
-    );
-    if (!patients) {
-      return res.status(404).send("Patient not found");
-    }
+    const user = await User.find({id: userId });
 
-    res.render("doctorhome", { patients });
+    res.render("priscription", { user });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
+
+  // try {
+  //   const userId = req.query.id;
+  //   console.log(userId);
+  //   if(!userId) {
+  //     console.log("error");
+  //   }
+  //   // const patients = await Patients.find({ _id: userId });
+  //   const patients = await Patients.findByIdAndUpdate(
+  //     userId,
+  //     { approved: "Yes" }
+  //   );
+  //   if (!patients) {
+  //     return res.status(404).send("Patient not found");
+  //   }
+
+  //   res.render("priscription", { patients });
+  // } catch (error) {
+  //   console.error(error);
+  //   res.status(500).send("Internal Server Error");
+  // }
   // res.render("consultpatient", {foundUser});
+});
+
+app.get("/api/auth/sendlink", async (req, res) => {
+  var accountSid = process.env.TWILIO_ACCOUNT_SID; 
+  var authToken = process.env.TWILIO_AUTH_TOKEN; 
+  var client = require('twilio')(accountSid, authToken); 
+
+client.messages.create({
+    body: 'Video Link = https://telemedicine.digitalsamba.com/telehealth valid for 10 mins only',
+    from: '+15102692855',
+    to: '+919004445451'
+})
+.then(message => console.log(message.sid));
+  // res.render("consultpatient", {foundUser});
+  res.redirect("https://telemedicine.digitalsamba.com/telehealth");
+
 });
 
 
@@ -197,17 +237,46 @@ app.get("/api/auth/adminhome", (req, res) => {
 app.get("/api/auth/adminadddoctor", (req, res) => {
   res.render("adminadddoctor", {foundUser});
 });
-app.get("/api/auth/allpatients", (req, res) => {
-  res.render("allpatients", {foundUser});
+app.get("/api/auth/allpatients", async (req, res) => {
+  try {
+    const user = await User.find({ roles: "65d0568f07bffeb8dad3850b" });
+
+    res.render("allpatients", { user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+  // res.render("allpatients", {foundUser});
 });
-app.get("/api/auth/alldoctors", (req, res) => {
-  res.render("alldoctors", {foundUser});
+app.get("/api/auth/alldoctors", async (req, res) => {
+  try {
+    const user = await User.find({ roles: "65d0568f07bffeb8dad3850c" });
+
+    res.render("alldoctors", { user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+  // res.render("alldoctors", {foundUser});
 });
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+
+// app.get('/api/auth/meet', async (req, res) => {
+//   try {
+//     // Make a request to the external service
+//     const response = await axios.get('https://telemedicine.digitalsamba.com/telehealth');
+//     res.json(response.data);
+// } catch (error) {
+//     console.error('Error making request to external service:', error.message);
+//     console.error('Error details:', error.response ? error.response.data : error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+// }
+// });
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {

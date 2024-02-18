@@ -269,13 +269,17 @@ exports.consult = (req, res) => {
       medication_type: req.body.medication_type,
       medication_duration: req.body.medication_duration,
       medication_dosage: req.body.medication_dosage,
-      query: req.body.query
+      query: req.body.query,
+      approved: "No"
     });
 
   patients.save((err, user) => {
     if (err) {
       res.status(500).send({ message: err });
       return;
+    }
+    else {
+      res.redirect('/api/auth/userprofile');
     }
   });
 };

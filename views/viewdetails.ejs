@@ -339,7 +339,8 @@ body {
                             </span>
                             <!-- Replace "Brand Name" with your logo -->
                             <!-- <img src="logo-101.png" alt="Logo" style="width: 100px; height: 60px;"> -->
-                            <img src="images/logo.png" alt="E Ayushman Bharat Logo" width="100%" height="100%">
+                      <img src="/images/logo.png" alt="E Ayushman Bharat Logo" width="50%" height="50%">
+
 
                         </a>
                     </li>
@@ -445,15 +446,16 @@ body {
                             <br>
                             <li class="form-control input-field"><b>Does it still exist?</b> <%= patient.allergy_exists %></li>
                             <br>Current Medication
-                            <li class="form-control input-field"><b>Type of Medication</b> <%= patient.medication_type %></li>
+                            <li class="form-control input-field"><b>Type of Medication:     </b> <%= patient.medication_type %></li>
                             <br>
-                            <li class="form-control input-field"><b>Duration</b> <%= patient.medication_duration %></li>
+                            <li class="form-control input-field"><b>Duration: </b> <%= patient.medication_duration %></li>
                             <br>
-                            <li class="form-control input-field"><b>Dosage</b> <%= patient.medication_dosage %></li>
+                            <li class="form-control input-field"><b>Dosage: </b> <%= patient.medication_dosage %></li>
                             <br>
-                            <li class="form-control input-field"><b>Query</b> <%= patient.query %></li>
-                            <br><a href="./approve?id=<%= patient._id %>" class="login-button">Approved</a>
-                            <a href="./viewdetails?id=<%= patient._id %>" class="login-button">Cancel</a>
+                            <li class="form-control input-field"><b>Query: </b> <%= patient.query %></li>
+                            <br><button class="login-button"><a href="/api/auth/sendlink" class="login-button">Send Video Link</a></button>
+                            <br>
+                            <br><button class="login-button"><a href="./approve?id=<%= patient._id %>" class="login-button">Give Prescription</a></button>
                             <!-- <li><%= patient.username %></li> -->
                             <!-- Add other patient properties as needed -->
                           <% }); %>
